@@ -1,0 +1,15 @@
+#version 130
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 proj;
+
+uniform vec3 objColor;
+
+in vec3 vertexPosition;
+out vec3 color_out; 
+
+void main(){
+  gl_Position = proj * view * model * vec4(vertexPosition, 1.0f);
+  color_out = objColor;
+}

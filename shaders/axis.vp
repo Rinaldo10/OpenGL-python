@@ -1,0 +1,14 @@
+#version 330 core
+
+uniform mat4 viewA;
+uniform mat4 projA;
+
+in vec3 vertexPosition;
+in vec3 color_in;
+
+out vec3 color_out;
+
+void main(){
+  gl_Position = projA * viewA * vec4(vertexPosition, 1.0);
+  color_out = color_in;
+}

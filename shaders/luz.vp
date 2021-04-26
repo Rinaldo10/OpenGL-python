@@ -1,0 +1,11 @@
+#version 330 core
+
+uniform mat4 modelLuz;
+uniform mat4 viewLuz;
+uniform mat4 projLuz;
+
+in vec3 vertexPosition;
+
+void main(){
+  gl_Position = projLuz * viewLuz * modelLuz * vec4(vertexPosition, 1.0f);
+}
